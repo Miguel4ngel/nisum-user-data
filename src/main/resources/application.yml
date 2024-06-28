@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+  paths-to-exclude: /error
+
+spring:
+  application:
+    name: desafio-nisum
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+jwt:
+  secret: ${JWT_SECRET:H1bT5iD1Kq/rciR1yMSg/oZQsDCMpoNLYZZ2IrvIBpSn7MnP/Ort3oA+a0toEYmt}
+  expiration: ${JWT_SECRET:36000}
+
+validation:
+  password:
+    regex: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$
+    message: "Password must have at least 8 characters, one uppercase letter, one lowercase letter and one number"
