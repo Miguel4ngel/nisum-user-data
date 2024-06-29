@@ -34,7 +34,8 @@ Una vez iniciada la aplicacion, se puede consumir el siguiente endpoint mediante
 
 ## Swagger:
 
-    http://localhost:8081/swagger-ui/index.html
+    http://localhost:8081/api-user-data/swagger-ui/index.html#
+
 ### Autenticacion de usuario.
 #### Para realizar cualquier operacion sobre la entidad Usuario, es necesario autenticarse mediante el endpoint /auth/login.
 #### El token obtenido, debe ser enviado en el header de todas las peticiones que requieran autenticacion.
