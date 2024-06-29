@@ -1,9 +1,9 @@
-package com.nisum.user_data.presentation.controller;
+package com.nisum.user_data.presentation.controller.user;
 
 import com.nisum.user_data.domain.service.user.UserService;
-import com.nisum.user_data.presentation.dto.CreateUserRequestDto;
-import com.nisum.user_data.presentation.dto.CreateUserResponseDto;
 import com.nisum.user_data.presentation.dto.error.ErrorDTO;
+import com.nisum.user_data.presentation.dto.user.CreateUserRequestDto;
+import com.nisum.user_data.presentation.dto.user.CreateUserResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/v1/user")
 @Tag(name = "User", description = "Controller to perform CRUD Operations on User Entity.")
 public class UserController {
 

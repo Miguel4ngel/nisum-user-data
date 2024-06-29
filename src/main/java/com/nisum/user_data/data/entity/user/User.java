@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author Miguel Angel
@@ -62,6 +61,9 @@ public class User {
 
     @Column(name = "jwt")
     private String jwtAccessToken;
+
+    @Column(name = "role")
+    private String role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Phone> phones;

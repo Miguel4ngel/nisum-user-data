@@ -1,4 +1,4 @@
-package com.nisum.user_data.presentation.dto;
+package com.nisum.user_data.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PhoneDto {
-    private String number;
-    private String cityCode;
-    private String countryCode;
+public class UserCredentialsDto {
+    private String email;
+    private String password;
 }

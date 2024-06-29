@@ -1,4 +1,4 @@
-package com.nisum.user_data.presentation.dto;
+package com.nisum.user_data.presentation.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 /**

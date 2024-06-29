@@ -1,9 +1,7 @@
 package com.nisum.user_data.domain.mapper;
 
 import com.nisum.user_data.data.entity.phone.Phone;
-import com.nisum.user_data.presentation.dto.CreateUserRequestDto;
-import com.nisum.user_data.presentation.dto.CreateUserResponseDto;
-import com.nisum.user_data.presentation.dto.PhoneDto;
+import com.nisum.user_data.presentation.dto.user.PhoneDto;
 import lombok.extern.log4j.Log4j2;
 
 /**

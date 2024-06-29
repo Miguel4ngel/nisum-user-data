@@ -7,12 +7,14 @@ import com.nisum.user_data.data.repository.user.UserRepository;
 import com.nisum.user_data.domain.exception.UserCreationException;
 import com.nisum.user_data.domain.mapper.PhoneMapper;
 import com.nisum.user_data.domain.mapper.UserMapper;
-import com.nisum.user_data.domain.service.jwt.JwtUtil;
-import com.nisum.user_data.presentation.dto.CreateUserRequestDto;
-import com.nisum.user_data.presentation.dto.CreateUserResponseDto;
-import jakarta.transaction.Transactional;
+import com.nisum.user_data.domain.service.jwt.JwtUtilService;
+import com.nisum.user_data.presentation.dto.user.CreateUserRequestDto;
+import com.nisum.user_data.presentation.dto.user.CreateUserResponseDto;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 /**
  * @author Miguel Angel
@@ -27,14 +29,29 @@ public class UserService {
 
     private UserRepository userRepository;
 
-    private JwtUtil jwtUtil;
+    private JwtUtilService jwtUtil;
 
     public UserService(UserRepository userRepository,
                        PhoneRepository phoneRepository,
-                       JwtUtil jwtUtil) {
+                       JwtUtilService jwtUtil) {
         this.userRepository = userRepository;
         this.phoneRepository = phoneRepository;
         this.jwtUtil = jwtUtil;
+    }
+
+    @PostConstruct
+    public void initAdminUser() {
+        log.info("Creating admin user");
+        User adminUser = User.builder()
+                .email("miguel.sanjuanm@gmail.com")
+                .password("admin")
+                .isActive(true)
+                .role("ADMIN")
+                .userId(UUID.randomUUID().toString())
+                .name("Miguel Angel")
+                .build();
+        userRepository.save(adminUser);
+        log.info("Admin user created");
     }
 
     public CreateUserResponseDto createUser(CreateUserRequestDto newUser) {
@@ -56,8 +73,6 @@ public class UserService {
             phoneToSave.setUser(userToSave);
             phoneRepository.save(phoneToSave);
         });
-        return UserMapper.fromUserEntityToDto(userRepository.findByEmail(newUser.getEmail()).get());
+        return UserMapper.fromUserEntityToDto(userToSave);
     }
-
-
 }

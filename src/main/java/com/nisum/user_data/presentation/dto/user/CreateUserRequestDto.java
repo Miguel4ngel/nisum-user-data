@@ -1,7 +1,6 @@
-package com.nisum.user_data.presentation.dto;
+package com.nisum.user_data.presentation.dto.user;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
