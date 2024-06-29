@@ -3,8 +3,6 @@ server:
   servlet:
     context-path: /api-user-data
 
-
-
 springdoc:
   swagger-ui:
     disable-swagger-default-url: true

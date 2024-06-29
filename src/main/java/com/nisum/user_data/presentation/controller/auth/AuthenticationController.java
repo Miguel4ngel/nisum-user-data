@@ -4,6 +4,7 @@ import com.nisum.user_data.domain.service.jwt.JwtUtilService;
 import com.nisum.user_data.presentation.dto.auth.AuthenticationRequestDto;
 import com.nisum.user_data.presentation.dto.auth.AuthenticationResponseDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,7 +28,7 @@ public class AuthenticationController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<AuthenticationResponseDto> login(@RequestBody AuthenticationRequestDto authenticationRequestDto) {
+    public ResponseEntity<AuthenticationResponseDto> login(@Valid @RequestBody AuthenticationRequestDto authenticationRequestDto) {
         return ResponseEntity.ok(jwtUtilService.generateToken(authenticationRequestDto));
     }
 
