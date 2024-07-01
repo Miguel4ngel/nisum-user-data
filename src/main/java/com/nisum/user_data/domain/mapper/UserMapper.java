@@ -27,6 +27,7 @@ public class UserMapper {
                 .modifiedAt(creationDate)
                 .lastLogin(creationDate)
                 .isActive(true)
+                .role("USER")
                 .jwtAccessToken(jwt)
                 .build();
     }
