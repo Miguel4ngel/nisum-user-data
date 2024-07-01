@@ -1,5 +1,6 @@
 package com.nisum.user_data.presentation.dto.user;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -20,12 +21,13 @@ import java.util.List;
 @NoArgsConstructor
 public class CreateUserRequestDto {
 
-    @NotEmpty
+    @NotEmpty(message = "Name must not be empty")
     private String name;
     @Email(regexp = ".+[@].+[\\.].+", message = "The email must have a valid format.")
     private String email;
-    @NotEmpty
+    @NotEmpty(message = "password must not be empty")
     private String password;
+    @Valid
     @NotEmpty
     private List<PhoneDto> phones;
 }

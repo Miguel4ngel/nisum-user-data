@@ -73,6 +73,7 @@ public class UserService {
             phoneToSave.setUser(userToSave);
             phoneRepository.save(phoneToSave);
         });
+        log.info("New user created with unique Id [{}]", userToSave.getUserId());
         return UserMapper.fromUserEntityToDto(userToSave);
     }
 }

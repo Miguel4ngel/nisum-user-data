@@ -68,7 +68,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/auth/login",
+					"raw": "http://localhost:8081/api-user-data/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
