@@ -12,7 +12,7 @@ springdoc:
 
 spring:
   application:
-    name: desafio-nisum
+    name: desafio-ey
   datasource:
     url: jdbc:h2:mem:mydb
     username: sa
@@ -29,7 +29,7 @@ spring:
 
 jwt:
   secret: ${JWT_SECRET:H1bT5iD1Kq/rciR1yMSg/oZQsDCMpoNLYZZ2IrvIBpSn7MnP/Ort3oA+a0toEYmt}
-  expiration: ${JWT_SECRET:36000}
+  expiration: ${JWT_SECRET:360000000}
 
 validation:
   password:

@@ -1,4 +1,4 @@
-# Desafio NISUM
+# Desafio Java EY
 
 El componente entregado, expone una API Rest como interface para realizar operaciones sobre una entidad Usuario (User).
 
