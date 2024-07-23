@@ -68,5 +68,7 @@ Una vez iniciada la aplicacion, se puede consumir el siguiente endpoint mediante
             ]
     }'
 
+### Actualizacion, Obtencion y Eliminacion de un usuario.
+#### Todas las peticiones para las operaciones mencionadas estan especificadas en el postman collection adjunto.
 
 
